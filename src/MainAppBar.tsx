@@ -4,16 +4,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink, useNavigate } from 'react-router';
-import { useAuth } from './AuthProvider';
+import { Link, useNavigate } from 'react-router';
+import { useAuth } from './providers/AuthProvider';
 
 export default function MainAppBar() {
-  const { user, logout } = useAuth()
+  const { isLoggedIn, logout } = useAuth()
   const navigate = useNavigate()
 
   const handleLogout = () => {
     logout();
-    navigate('/login')
+    navigate('/vite-react-auth-provider-app/login')
   };
   
   return (
@@ -32,10 +32,15 @@ export default function MainAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Auth App
           </Typography>
-          <NavLink to="/" style={{ textDecoration: "none", color: "#fff", marginRight: "15px"}}>Home</NavLink>
-          {user
-            ? <NavLink to="/" onClick={handleLogout} style={{ textDecoration: "none", color: "#fff"}}>Logout</NavLink>  
-            : <NavLink to="/login" style={{ textDecoration: "none", color: "#fff"}}>Login</NavLink>  
+          <Link to="/vite-react-auth-provider-app/" style={{ textDecoration: "none", color: "#fff", marginRight: "15px"}}>Home</Link>
+          {isLoggedIn
+            ?
+              <>
+                <Link to="/vite-react-auth-provider-app/dashboard" style={{ textDecoration: "none", color: "#fff", marginRight: "15px"}}>Dashboard</Link>
+                <Link to="/vite-react-auth-provider-app/" onClick={handleLogout} style={{ textDecoration: "none", color: "#fff"}}>Logout</Link>
+              </>  
+            : 
+            <Link to="/vite-react-auth-provider-app/login" style={{ textDecoration: "none", color: "#fff"}}>Login</Link>  
           }
         </Toolbar>
       </AppBar>

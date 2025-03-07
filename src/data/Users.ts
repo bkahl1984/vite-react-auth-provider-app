@@ -1,4 +1,4 @@
-import { User } from "./AuthProvider";
+import { User } from "../providers/AuthProvider";
 
 export const Users: User[] = [
     {id:"1", "name":"Brad Kahl", username: "bkahl", password: "password", role: "admin"},

@@ -1,7 +1,6 @@
 // Dashboard.tsx
 import React from 'react'
-import { useAuth } from './AuthProvider'
-import './App.css'
+import { useAuth } from '../providers/AuthProvider'
 
 const Dashboard: React.FC = () => {
   const { user, token, isLoggedIn } = useAuth()

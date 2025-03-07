@@ -1,8 +1,8 @@
 // Login.tsx
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { useAuth } from './AuthProvider.tsx'
-import { Users } from './Users';
+import { useAuth } from '../providers/AuthProvider.tsx'
+import { Users } from '../data/Users.ts';
 import { Button, TextField } from '@mui/material';
 
 const Login: React.FC = () => {
@@ -25,15 +25,15 @@ const Login: React.FC = () => {
       // Generate a dummy token or fetch from a local source
       const dummyToken = `${user.username}-mysecrettoken`
       login(user, dummyToken);
-      navigate('/dashboard')
+      navigate('/vite-react-auth-provider-app/dashboard')
     } else if (user && username === username && user.password !== password) {
       setUsernameError(false)
       setPasswordError(true)
-      navigate('/login')
+      navigate('/vite-react-auth-provider-app/login')
     } else {
       setUsernameError(true)
       setPasswordError(true)
-      navigate('/login')
+      navigate('/vite-react-auth-provider-app/login')
     }    
   }
 

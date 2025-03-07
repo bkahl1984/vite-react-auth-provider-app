@@ -1,7 +1,7 @@
 // AuthContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react'
 import axios from 'axios';
-import { Users } from './Users';
+import { Users } from '../data/Users';
 import { useNavigate } from 'react-router';
 
 export interface User {
@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setToken(null)
     setLoginTime(null);
     localStorage.removeItem('loginTime');
-    navigate('/login');
+    navigate('/vite-react-auth-provider-app/login');
   }
 
   useEffect(() => {

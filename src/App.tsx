@@ -1,18 +1,18 @@
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { AuthProvider } from './providers/AuthProvider.tsx'
+import MainAppBar from './MainAppBar.tsx'
 import './App.css'
-import { useAuth } from './AuthProvider';
+import { Outlet } from 'react-router'
 
 const App: React.FC = () => {
-  const { user, isLoggedIn } = useAuth()
-  
+  const theme = createTheme();
   return (
-    <>
-      <br />
-      <br />
-      {isLoggedIn 
-        ? <div className="text-stone-600">Welcome to the Home Page, {user?.name}!</div>
-        : <div className="text-stone-600">Home Page!</div>
-      }
-    </>
+    <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <MainAppBar />
+          <Outlet />
+        </AuthProvider>
+    </ThemeProvider>
   );
 };
 
