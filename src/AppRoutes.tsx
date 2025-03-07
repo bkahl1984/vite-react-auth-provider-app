@@ -13,11 +13,11 @@ const AppRoutes: React.FC = () => {
 
   return (
     <Routes>
-        <Route path="/vite-react-auth-provider-app/" element={<App />} />
-        <Route path="/vite-react-auth-provider-app/login" element={<Login />} />
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
         { user 
-          ? <Route path="/vite-react-auth-provider-app/dashboard" element={<Dashboard />} />
-          : <Route path="/vite-react-auth-provider-app/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          ? <Route path="/dashboard" element={<Dashboard />} />
+          : <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         }  
     </Routes>
   );

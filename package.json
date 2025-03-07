@@ -1,6 +1,6 @@
 {
   "name": "vite-react-auth-provider-app",
-  "home": "https://bkahl1984.github.io/vite-react-auth-provider-app",
+  "homepage": "https://bkahl1984.github.io/vite-react-auth-provider-app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
