@@ -10,14 +10,14 @@ import AppRoutes from './AppRoutes.tsx'
 const theme = createTheme();
 
 createRoot(document.getElementById('root')!).render(
-  <ThemeProvider theme={theme}>
-    <StrictMode>
-      <AuthProvider>
-        <BrowserRouter>
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <StrictMode>
+        <AuthProvider>
           <MainAppBar />
           <AppRoutes />
-        </BrowserRouter>
-      </AuthProvider>
-    </StrictMode>
-  </ThemeProvider>,
+        </AuthProvider>
+      </StrictMode>
+    </ThemeProvider>
+  </BrowserRouter>,
 )

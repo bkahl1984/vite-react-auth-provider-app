@@ -30,7 +30,7 @@ export default function MainAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Vite React Login App
+            Vite/React Auth Provider Login App
           </Typography>
           <NavLink to="/" style={{ textDecoration: "none", color: "#fff", marginRight: "15px"}}>Home</NavLink>
           {user
