@@ -13,6 +13,6 @@ export default defineConfig(() => {
       port: 3000,
       // Other server options can be added here, like 'open: true' to automatically open the app in the browser
     },
-    base: "/vite-react-auth-provider-app",
+    base: "/vite-react-auth-provider-app/",
   }
 })
