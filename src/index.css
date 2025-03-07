@@ -28,7 +28,6 @@ body {
   place-items: center;
   min-width: 320px;
   /* min-height: 100vh; */
-  min-height: 100vh;
 }
 
 h1 {
@@ -65,16 +64,5 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  body {
-    min-height: 100vh;
-  }
-  #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
   }
 }
